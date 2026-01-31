@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Thakur | Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #212428;
+            color: #c4cfde;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(33, 36, 40, 0.95);
+            box-shadow: 5px 5px 15px #1c1e22;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff014f;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #c4cfde;
+            font-weight: bold;
+            margin-left: 20px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff014f;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            min-height: 85vh;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #ff014f;
+        }
+
+        .photo-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .photo-grid img {
+            width: 220px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px #1c1e22;
+            border: 2px solid #2d3136;
+            transition: 0.5s ease;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: #ff014f;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background: #23272b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px #1c1e22;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons i {
+            color: #ff014f;
+            font-size: 1.3rem;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover i {
+            color: white;
+        }
+
+        /* Hover Colors */
+        .linkedin-btn:hover {
+            background: #0077b5 !important;
+        }
+
+        .github-btn:hover {
+            background: #333 !important;
+        }
+
+        .whatsapp-btn:hover {
+            background: #25D366 !important;
+        }
+
+        .instagram-btn:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+        }
+
+        .scaler-btn:hover {
+            background: white !important;
+        }
+
+        .scaler-logo {
+            width: 25px;
+            height: auto;
+            filter: invert(12%) sepia(94%) saturate(6448%) hue-rotate(338deg) brightness(101%) contrast(107%);
+            transition: 0.3s;
+        }
+
+        .scaler-btn:hover .scaler-logo {
+            filter: none;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: #1e2125;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s all ease-in-out;
+        }
+
+        .about.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .underline {
+            width: 60px;
+            height: 4px;
+            background: #ff014f;
+            margin: 0 auto 30px;
+        }
+
+        .lang-tag {
+            border: 1px solid #ff014f;
+            color: #ff014f;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .lang-tag:hover {
+            background: #ff014f;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* MULTI-DEVICE RESPONSIVE LOGIC */
+        @media (max-width: 850px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 5%;
+                gap: 30px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .photo-grid {
+                justify-content: center;
+            }
+
+            .photo-grid img {
+                width: 40%;
+                height: auto;
+                min-width: 140px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo" onclick="window.scrollTo(0,0)">AT</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <p style="letter-spacing: 3px; font-size: 0.8rem; color: #ff014f;">SOFTWARE DEVELOPER</p>
+            <h1>Hi, I'm <span class="highlight">Aryan Thakur</span></h1>
+            <p style="font-size: 1.2rem; margin-bottom: 5px;">Master's in CS Candidate | Malta, Europe</p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/aryan-thakur-141641370" target="_blank" class="linkedin-btn"
+                    title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aryanthakurat366-max" target="_blank" class="github-btn" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://wa.me/917206125860" target="_blank" class="whatsapp-btn" title="WhatsApp"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/thakur_since2002" target="_blank" class="instagram-btn"
+                    title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" class="scaler-btn"
+                    title="Scaler"><img src="https://img.icons8.com/color/48/scaler-academy.png" class="scaler-logo"
+                        alt="Scaler"></a>
+            </div>
+        </div>
+
+        <div class="photo-grid">
+            <img src="aryan.jfif.jfif" alt="Aryan Photo 1">
+            <img src="aryan3.jfif.jfif" alt="Aryan Photo 2">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="underline"></div>
+        <p style="max-width: 750px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+            I am a <strong>Software Developer</strong> currently pursuing my <strong>Master's in Computer Science in
+                Malta, Europe</strong>.
+            I have strong foundational skills in <strong>Java and SQL</strong>, and I am currently expanding my
+            expertise by learning
+            <strong>Full Stack Development and LLD (Low-Level Design)</strong> to build scalable and efficient software
+            systems.
+        </p>
+
+        <h3 style="margin-top: 40px; color: white;">Languages I Speak:</h3>
+        <div style="margin-top: 15px;">
+            <span class="lang-tag">German</span>
+            <span class="lang-tag">Spanish</span>
+            <span class="lang-tag">English</span>
+            <span class="lang-tag">Hindi</span>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.about');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                if (revealTop < windowHeight - 150) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.onload = reveal;
+    </script>
+
+</body>
+
+</html>
