@@ -72,15 +72,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .hero-text h1 {
@@ -143,42 +136,6 @@
             transform: translateY(-5px);
         }
 
-        .social-icons a:hover i {
-            color: white;
-        }
-
-        /* Hover Colors */
-        .linkedin-btn:hover {
-            background: #0077b5 !important;
-        }
-
-        .github-btn:hover {
-            background: #333 !important;
-        }
-
-        .whatsapp-btn:hover {
-            background: #25D366 !important;
-        }
-
-        .instagram-btn:hover {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
-        }
-
-        .scaler-btn:hover {
-            background: white !important;
-        }
-
-        .scaler-logo {
-            width: 25px;
-            height: auto;
-            filter: invert(12%) sepia(94%) saturate(6448%) hue-rotate(338deg) brightness(101%) contrast(107%);
-            transition: 0.3s;
-        }
-
-        .scaler-btn:hover .scaler-logo {
-            filter: none;
-        }
-
         /* About Section */
         .about {
             padding: 100px 10%;
@@ -192,6 +149,76 @@
         .about.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            padding: 100px 10%;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s all ease-in-out;
+        }
+
+        .contact.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #23272b;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px #1c1e22;
+            text-align: left;
+        }
+
+        .contact-form label {
+            color: #ff014f;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: #191b1e;
+            border: 2px solid #2d3136;
+            border-radius: 8px;
+            color: white;
+            margin-bottom: 20px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #ff014f;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #23272b;
+            color: #ff014f;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px #1c1e22;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff014f;
+            color: white;
+            transform: translateY(-3px);
         }
 
         .underline {
@@ -213,46 +240,10 @@
             transition: 0.3s;
         }
 
-        .lang-tag:hover {
-            background: #ff014f;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* MULTI-DEVICE RESPONSIVE LOGIC */
         @media (max-width: 850px) {
-            nav {
-                padding: 15px 5%;
-            }
-
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 40px 5%;
-                gap: 30px;
-            }
-
-            .hero-text {
-                max-width: 100%;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .photo-grid {
-                justify-content: center;
-            }
-
-            .photo-grid img {
-                width: 40%;
-                height: auto;
-                min-width: 140px;
-            }
-
-            .social-icons {
-                justify-content: center;
-            }
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-text { max-width: 100%; }
+            .photo-grid img { width: 45%; }
         }
     </style>
 </head>
@@ -264,6 +255,7 @@
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
         </div>
     </nav>
 
@@ -274,17 +266,10 @@
             <p style="font-size: 1.2rem; margin-bottom: 5px;">Master's in CS Candidate | Malta, Europe</p>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/aryan-thakur-141641370" target="_blank" class="linkedin-btn"
-                    title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/aryanthakurat366-max" target="_blank" class="github-btn" title="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://wa.me/917206125860" target="_blank" class="whatsapp-btn" title="WhatsApp"><i
-                        class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/thakur_since2002" target="_blank" class="instagram-btn"
-                    title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" class="scaler-btn"
-                    title="Scaler"><img src="https://img.icons8.com/color/48/scaler-academy.png" class="scaler-logo"
-                        alt="Scaler"></a>
+                <a href="https://www.linkedin.com/in/aryan-thakur-141641370" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aryanthakurat366-max" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/917206125860" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/thakur_since2002" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -298,12 +283,9 @@
         <h2>About Me</h2>
         <div class="underline"></div>
         <p style="max-width: 750px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
-            I am a <strong>Software Developer</strong> currently pursuing my <strong>Master's in Computer Science in
-                Malta, Europe</strong>.
-            I have strong foundational skills in <strong>Java and SQL</strong>, and I am currently expanding my
-            expertise by learning
-            <strong>Full Stack Development and LLD (Low-Level Design)</strong> to build scalable and efficient software
-            systems.
+            I am a <strong>Software Developer</strong> currently pursuing my <strong>Master's in Computer Science in Malta, Europe</strong>.
+            I have strong foundational skills in <strong>Java and SQL</strong>, and I am currently learning
+            <strong>Full Stack Development</strong> to build scalable software systems.
         </p>
 
         <h3 style="margin-top: 40px; color: white;">Languages I Speak:</h3>
@@ -315,10 +297,30 @@
         </div>
     </section>
 
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="underline"></div>
+        
+        <div class="contact-form">
+            <form action="#">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can I help you?"></textarea>
+
+                <input type="submit" value="Send Message" class="submit-btn">
+            </form>
+        </div>
+    </section>
+
     <script>
         window.addEventListener('scroll', reveal);
         function reveal() {
-            var reveals = document.querySelectorAll('.about');
+            var reveals = document.querySelectorAll('.about, .contact');
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var revealTop = reveals[i].getBoundingClientRect().top;
@@ -331,5 +333,4 @@
     </script>
 
 </body>
-
 </html>
