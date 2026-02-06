@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             background-color: #212428;
             color: #c4cfde;
@@ -21,7 +18,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -49,14 +45,10 @@
             font-weight: bold;
             margin-left: 20px;
             transition: 0.3s;
-            position: relative;
         }
 
-        .nav-links a:hover {
-            color: #ff014f;
-        }
+        .nav-links a:hover { color: #ff014f; }
 
-        /* Hero Section */
         .hero {
             display: flex;
             align-items: center;
@@ -66,31 +58,17 @@
             gap: 40px;
         }
 
-        .hero-text {
-            max-width: 50%;
-            animation: fadeIn 1.2s ease-in;
-        }
+        .hero-text { max-width: 50%; animation: fadeIn 1.2s ease-in; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            color: #ffffff;
-            margin: 10px 0;
-        }
+        .hero-text h1 { font-size: 3.5rem; color: #ffffff; margin: 10px 0; }
+        .highlight { color: #ff014f; }
 
-        .highlight {
-            color: #ff014f;
-        }
-
-        .photo-grid {
-            display: flex;
-            gap: 20px;
-        }
-
+        .photo-grid { display: flex; gap: 20px; }
         .photo-grid img {
             width: 220px;
             height: 320px;
@@ -101,19 +79,9 @@
             transition: 0.5s ease;
         }
 
-        .photo-grid img:hover {
-            transform: scale(1.05) rotate(2deg);
-            border-color: #ff014f;
-        }
+        .photo-grid img:hover { transform: scale(1.05) rotate(2deg); border-color: #ff014f; }
 
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
+        .social-icons { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
         .social-icons a {
             width: 50px;
             height: 50px;
@@ -127,32 +95,10 @@
             text-decoration: none;
         }
 
-        .social-icons i {
-            color: #ff014f;
-            font-size: 1.3rem;
-        }
+        .social-icons i { color: #ff014f; font-size: 1.3rem; }
+        .social-icons a:hover { transform: translateY(-5px); }
 
-        .social-icons a:hover {
-            transform: translateY(-5px);
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 10%;
-            text-align: center;
-            background-color: #1e2125;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s all ease-in-out;
-        }
-
-        .about.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Contact Section */
-        .contact {
+        .about, .contact {
             padding: 100px 10%;
             text-align: center;
             opacity: 0;
@@ -160,10 +106,8 @@
             transition: 1s all ease-in-out;
         }
 
-        .contact.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .about.active, .contact.active { opacity: 1; transform: translateY(0); }
+        .about { background-color: #1e2125; }
 
         .contact-form {
             max-width: 600px;
@@ -175,15 +119,8 @@
             text-align: left;
         }
 
-        .contact-form label {
-            color: #ff014f;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .contact-form input, 
-        .contact-form textarea {
+        .contact-form label { color: #ff014f; font-weight: bold; display: block; margin-bottom: 10px; }
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
             background: #191b1e;
@@ -195,12 +132,6 @@
             box-sizing: border-box;
         }
 
-        .contact-form input:focus, 
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #ff014f;
-        }
-
         .submit-btn {
             width: 100%;
             padding: 15px;
@@ -209,36 +140,14 @@
             border: none;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 1rem;
             cursor: pointer;
             box-shadow: 5px 5px 10px #1c1e22;
             transition: 0.3s;
         }
 
-        .submit-btn:hover {
-            background: #ff014f;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .underline {
-            width: 60px;
-            height: 4px;
-            background: #ff014f;
-            margin: 0 auto 30px;
-        }
-
-        .lang-tag {
-            border: 1px solid #ff014f;
-            color: #ff014f;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px;
-            transition: 0.3s;
-        }
+        .submit-btn:hover { background: #ff014f; color: white; transform: translateY(-3px); }
+        .underline { width: 60px; height: 4px; background: #ff014f; margin: 0 auto 30px; }
+        .lang-tag { border: 1px solid #ff014f; color: #ff014f; padding: 8px 18px; border-radius: 20px; display: inline-block; margin: 5px; font-weight: bold; }
 
         @media (max-width: 850px) {
             .hero { flex-direction: column-reverse; text-align: center; }
@@ -249,7 +158,6 @@
 </head>
 
 <body>
-
     <nav>
         <div class="logo" onclick="window.scrollTo(0,0)">AT</div>
         <div class="nav-links">
@@ -286,34 +194,26 @@
         <p style="max-width: 750px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
             I am a <strong>Software Developer</strong> currently pursuing my <strong>Master's in Computer Science in Malta, Europe</strong>.
             I have strong foundational skills in <strong>Java and SQL</strong>, and I am currently learning
-            <strong>Full Stack Development</strong> to build scalable software systems.
+            <strong>Full Stack Development</strong>.
         </p>
-
-        <h3 style="margin-top: 40px; color: white;">Languages I Speak:</h3>
         <div style="margin-top: 15px;">
-            <span class="lang-tag">German</span>
-            <span class="lang-tag">Spanish</span>
-            <span class="lang-tag">English</span>
-            <span class="lang-tag">Hindi</span>
+            <span class="lang-tag">German</span> <span class="lang-tag">Spanish</span>
+            <span class="lang-tag">English</span> <span class="lang-tag">Hindi</span>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
         <div class="underline"></div>
-        
         <div class="contact-form">
             <form action="https://formspree.io/f/xlgwryje" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
-
-                <input type="submit" value="Send Message" class="submit-btn">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <label>Message</label>
+                <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
@@ -325,13 +225,10 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var revealTop = reveals[i].getBoundingClientRect().top;
-                if (revealTop < windowHeight - 150) {
-                    reveals[i].classList.add('active');
-                }
+                if (revealTop < windowHeight - 150) { reveals[i].classList.add('active'); }
             }
         }
         window.onload = reveal;
     </script>
-
 </body>
 </html>
